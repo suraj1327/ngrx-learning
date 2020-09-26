@@ -1,0 +1,24 @@
+<div class="right" *ngIf="learnings">
+  <h3>Learning</h3>
+  <ul>
+   <li *ngFor="let learning of learnings | async"> 
+     <a [href]="learning.url" target="_blank">{{learning.name}}</a>
+    </li>
+  </ul>
+
+  <table class="table table-striped table-responsive">
+    <thead>
+      <th>Id</th>
+      <th>name</th>
+      <th>userName</th>
+      <th>email</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of usersList">
+        <td>{{user.id}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.email}}</td>
+      </tr>
+    </tbody>
+  </table>
