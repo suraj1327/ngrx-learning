@@ -9,4 +9,16 @@ describe('UsersService', () => {
     const service: UsersService = TestBed.get(UsersService);
     expect(service).toBeTruthy();
   });
+
+  it('should fetch list of users',()=>{
+    const users=[{
+      id:'1',name:'a',email:'b',username:'c'
+    }];
+
+    const service:UsersService =TestBed.get(UsersService);
+    service.fetchListOfUsers('1').subscribe((users)=>{
+             expect(users.length).toEqual(1);
+    })
+
+  })
 });

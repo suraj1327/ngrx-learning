@@ -17,14 +17,15 @@ export class ReadComponent implements OnInit {
     this.learnings = store.select('learning');
    }
 
-  ngOnInit() {
-     var userId='1';
+
+  fetchUsers(){
+    var userId='1';
     this.service.fetchListOfUsers(userId).subscribe((response:Response)=>{
           this.usersList= response;
     })
-
-
-
+  }
+  ngOnInit() {
+     this.fetchUsers();
   }
 
 }
